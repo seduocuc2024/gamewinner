@@ -2,34 +2,43 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Principal - GAMEWINNER</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <header class="bg-primary text-white text-center py-4">
         <h1>Bienvenidos a GAMEWINNER</h1>
         <h2>una tienda de juegos de mesa</h2>
     </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="aventura.html">Aventura</a></li>
-            <li><a href="familiar.html">Familiar</a></li>
-            <li><a href="niños.html">Niños</a></li>
-            <li><a href="2jugadores.html">2 Jugadores</a></li>
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Juegos de Mesa</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="aventura.html">Aventura</a></li>
+                <li class="nav-item"><a class="nav-link" href="familiar.html">Familiar</a></li>
+                <li class="nav-item"><a class="nav-link" href="niños.html">Niños</a></li>
+                <li class="nav-item"><a class="nav-link" href="2jugadores.html">2 Jugadores</a></li>
+            </ul>
+        </div>
     </nav>
-    <main>
-        <section>
+    <main class="container my-5">
+        <section class="text-center">
             <br></br>
             <h2>Juego de Mesa Destacado</h2>
             <p>Haz clic en el enlace para ver más detalles sobre nuestro juego de mesa destacado.</p>
-            <a href="juego.html">Ver Juego de Mesa Destacado</a>
+            <a href="juego.html" class="btn btn-primary">Ver Juego de Mesa Destacado</a>
         </section>
     </main>
-    <footer>
+    <footer class="bg-dark text-white text-center py-3">
         <p>&copy; 2024 Tienda de Juegos de Mesa. Todos los derechos reservados.</p>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+

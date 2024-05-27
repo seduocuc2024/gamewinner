@@ -4,48 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalles del Juego de Mesa</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header, footer {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 1em;
-        }
-        main {
-            padding: 20px;
-        }
-        .juego {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        .juego img {
-            max-width: 200px;
-            height: auto;
-        }
-        .juego div {
-            max-width: 600px;
-        }
-    </style>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <header class="bg-primary text-white text-center py-4">
         <h1>Categoria "Aventura"</h1>
     </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Juegos de Mesa</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+            </ul>
+        </div>
     </nav>
-    <main>
-        <div class="juego">
-            <img src="imagenes/aventura/ELDRITCH_HORROR.jpg" alt="Juego de aventura">
-            <div>
+    <main class="container my-5">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="imagenes/aventura/ELDRITCH_HORROR.jpg" alt="Juego de aventura" class="img-fluid">
+            </div>
+            <div class="col-md-8">
                 <h2>Eldritch Horror</h2>
                 <p>¡Se acerca el fin del mundo!
 
@@ -56,9 +35,12 @@
                 <p><strong>Descuento:</strong> Sí</p>
             </div>
         </div>
-        <div class="juego">
-            <img src="imagenes/aventura/THE_ISLAND.jpg" alt="Juego de aventura">
-            <div>
+        <br></br>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="imagenes/aventura/THE_ISLAND.jpg" alt="Juego de aventura" class="img-fluid">
+            </div>
+            <div class="col-md-8">
                 <h2>The Island</h2>
                 <p>Diriges un equipo de valientes Exploradores, en una expedición a una exótica isla llena de peligros y tesoros. De repente, el volcán que corona este exuberante arrecife, hasta ahora dormido, ¡ha entrado en erupción! La tierra comienza a temblar y la isla se hunde, lenta e inexorablemente, en el mar. Debes salvar a tu equipo si quieres ganar la partida.
 
@@ -69,9 +51,12 @@
                 <p><strong>Descuento:</strong> Sí</p>
             </div>
         </div>
-        <div class="juego">
-            <img src="imagenes/aventura/GLOOMHAVEN.jpg" alt="Juego de aventura">
-            <div>
+        <br></br>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="imagenes/aventura/GLOOMHAVEN.jpg" alt="Juego de aventura" class="img-fluid">
+            </div>
+            <div class="col-md-8">
                 <h2>Gloomhaven: Fauces del León</h2>
                 <p>El arrollador éxito que la saga Gloomhaven ha tenido desde sus inicios es uno de los motivos por los que se ha convertido por derecho propio en un clásico moderno. Es el más completo juego de mazmorreo, con un grupo de intrépidos aventureros enfrentándose a todo tipo de escenarios de fantasía, plagados de tesoros, enemigos de todo tipo y acertijos que resolver.
                     Y ahora, entrar en este universo va a ser más fácil que nunca. Si quieres disfrutar de toda su calidad de la manera más rápida y accesible, estás de enhorabuena. Anunciamos un juego a tu medida: Gloomhaven: Fauces del León, una versión más sencilla de jugar que sin duda va a conseguir hacer miles de nuevos fans.
@@ -84,8 +69,15 @@
             </div>
         </div>
     </main>
-    <footer>
+    <footer class="bg-dark text-white text-center py-3">
         <p>&copy; 2024 Tienda de Juegos de Mesa. Todos los derechos reservados.</p>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+
+
+
