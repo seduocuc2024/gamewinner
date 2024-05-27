@@ -48,9 +48,9 @@ nav ul li a:hover {
     animation: resaltar 0.5s forwards;
 }
 
-section:hover {
+/*section:hover {
     animation: girar 0.5s forwards;
-}
+}*/
 
 /* Resto del estilo */
 body {
@@ -118,3 +118,10 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
+
+
+
+
+
+

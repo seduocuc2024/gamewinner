@@ -4,48 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalles del Juego de Mesa</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header, footer {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 1em;
-        }
-        main {
-            padding: 20px;
-        }
-        .juego {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        .juego img {
-            max-width: 200px;
-            height: auto;
-        }
-        .juego div {
-            max-width: 600px;
-        }
-    </style>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <header class="bg-primary text-white text-center py-4">
         <h1>Categoria "Familiar"</h1>
     </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Juegos de Mesa</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+            </ul>
+        </div>
     </nav>
-    <main>
-        <div class="juego">
-            <img src="imagenes/familiar/7_WONDERS.jpg" alt="Juego familiar">
-            <div>
+    <main class="container my-5">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="imagenes/familiar/7_WONDERS.jpg" alt="Juego familiar" class="img-fluid">
+            </div>
+            <div class="col-md-8">
                 <h2>7 Wonders</h2>
                 <p>Gobierna una de las siete grandes ciudades del mundo antiguo. Explota los recursos naturales de sus tierras, participa en la imparable marcha del progreso, desarrolla tus relaciones comerciales y haz valer su poder militar. Deja tu huella en la historia de la civilización construyendo una Maravilla arquitectónica que trascienda a través de los tiempos venideros.
 
@@ -56,9 +35,12 @@
                 <p><strong>Descuento:</strong> Sí</p>
             </div>
         </div>
-        <div class="juego">
-            <img src="imagenes/familiar/BANG.jpg" alt="Juego familiar">
-            <div>
+        <br></br>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="imagenes/familiar/BANG.jpg" alt="Juego familiar" class="img-fluid">
+            </div>
+            <div class="col-md-8">
                 <h2>Bang! (El Juego del Salvaje Oeste)</h2>
                 <p>Una calle polvorienta. Una zarza rueda de un lado a otro. Dos hombres de pie, frente a frente. Uno de ellos va armado con una pistola. El otro le apunta con su Winchester.
 
@@ -71,9 +53,12 @@
                 <p><strong>Descuento:</strong> Sí</p>
             </div>
         </div>
-        <div class="juego">
-            <img src="imagenes/familiar/MYSTERIUM.jpg" alt="Juego familiar">
-            <div>
+        <br></br>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="imagenes/familiar/MYSTERIUM.jpg" alt="Juego familiar" class="img-fluid">
+            </div>
+            <div class="col-md-8">
                 <h2>Mysterium</h2>
                 <p>Mysterium es un juego de mesa cooperativo en el que tú y tus amigos se aventuran mentalmente en la mansión encantada de Mysterium. Un jugador representa el papel de fantasma mientras todos los demás son mediums. Para resolver el crimen, el fantasma debe primero recordar (con vuestra ayuda) los detalles y sospechosos.
 
@@ -85,8 +70,11 @@
             </div>
         </div>
     </main>
-    <footer>
+    <footer class="bg-dark text-white text-center py-3">
         <p>&copy; 2024 Tienda de Juegos de Mesa. Todos los derechos reservados.</p>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
