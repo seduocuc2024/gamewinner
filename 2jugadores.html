@@ -4,48 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalles del Juego de Mesa</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header, footer {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 1em;
-        }
-        main {
-            padding: 20px;
-        }
-        .juego {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        .juego img {
-            max-width: 200px;
-            height: auto;
-        }
-        .juego div {
-            max-width: 600px;
-        }
-    </style>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Categoria "Niños"</h1>
+    <header class="bg-primary text-white text-center py-4">
+        <h1>Categoria "2 Jugadores</h1>
     </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Juegos de Mesa</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+            </ul>
+        </div>
     </nav>
-    <main>
-        <div class="juego">
-            <img src="imagenes/2jugadores/PATCHWORK.jpg" alt="Juego para 2 jugadores">
-            <div>
+    <main class="container my-5">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="imagenes/2jugadores/PATCHWORK.jpg" alt="Juego para 2 jugadores" class="img-fluid">
+            </div>
+            <div class="col-md-8">
                 <h2>Patchwork</h2>
                 <p>¡Cuántos retales y parches de cuero! ¡Vamos a coser una colcha hermosa! Pero eso conlleva tiempo y mucho esfuerzo, además de un suministro importante de botones. Para ganar la partida, deberás combinar hábilmente retazos de tela y elaborar una colcha con los mejores parches.
 
@@ -58,9 +37,12 @@
                 <p><strong>Descuento:</strong> Sí</p>
             </div>
         </div>
-        <div class="juego">
-            <img src="imagenes/2jugadores/JEKYLL_VS_HYDE.jpg" alt="Juego para 2 jugadores">
-            <div>
+        <br></br>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="imagenes/2jugadores/JEKYLL_VS_HYDE.jpg" alt="Juego para 2 jugadores" class="img-fluid">
+            </div>
+            <div class="col-md-8">
                 <h2>Jekyll vs. Hyde</h2>
                 <p>Jekyll vs. Hyde es un juego de bazas para 2 jugadores, basado en la famosa novela “El extraño caso del Dr. Jekyll y Mr. Hyde” de Robert Louis Stevenson. Como el Dr. Jekyll, deberás resistir los feroces ataques de Mr. Hyde para proteger tu mente y mantener el secreto de tu naturaleza dual. Como Mr. Hyde, tu objetivo es dominar al Dr. Jekyll para imponer tu identidad.
 
@@ -71,9 +53,12 @@
                 <p><strong>Descuento:</strong> Sí</p>
             </div>
         </div>
-        <div class="juego">
-            <img src="imagenes/2jugadores/KEYFORGE.jpg" alt="Juego para 2 jugadores">
-            <div>
+        <br></br>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="imagenes/2jugadores/KEYFORGE.jpg" alt="Juego para 2 jugadores" class="img-fluid">
+            </div>
+            <div class="col-md-8">
                 <h2>KeyForge: Mundos en Colisión</h2>
                 <p>KeyForge es un juego de cartas creado por el legendario diseñador de juegos Richard Garfield. Se presenta como el único juego en el que el mazo se adapta a cada jugador, es único, y por lo tanto no pueden darse dos partidas iguales. Un nuevo mundo de posibilidades más allá de la clásica mecánica de construcción de mazos que te llevará al siguiente nivel de experiencia de juego.
 
@@ -83,8 +68,11 @@
             </div>
         </div>
     </main>
-    <footer>
+    <footer class="bg-dark text-white text-center py-3">
         <p>&copy; 2024 Tienda de Juegos de Mesa. Todos los derechos reservados.</p>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
