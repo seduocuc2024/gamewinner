@@ -4,48 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalles del Juego de Mesa</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header, footer {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 1em;
-        }
-        main {
-            padding: 20px;
-        }
-        .juego {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        .juego img {
-            max-width: 200px;
-            height: auto;
-        }
-        .juego div {
-            max-width: 600px;
-        }
-    </style>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <header class="bg-primary text-white text-center py-4">
         <h1>Categoria "Niños"</h1>
     </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Juegos de Mesa</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+            </ul>
+        </div>
     </nav>
-    <main>
-        <div class="juego">
-            <img src="imagenes/niños/EL_LABERINTO_MAGICO.jpg" alt="Juego de niños">
-            <div>
+    <main class="container my-5">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="imagenes/niños/EL_LABERINTO_MAGICO.jpg" alt="Juego de niños" class="img-fluid">
+            </div>
+            <div class="col-md-8">
                 <h2>El Laberinto Mágico</h2>
                 <p>¡Paf! ¡Ay! El pequeño mago se frota los ojos con sorpresa. ¿Hay un muro delante de él? Los aprendices de mago exploran con curiosidad el laberinto mágico. Hoy tienen una tarea importante que cumplir: ¡buscar los símbolos mágicos! Esto resultaría muy sencillo si no fuera porque los grandes magos siempre les están gastando bromas a los niños. Los caminos se van abriendo y cerrando, como por arte de magia... El laberinto está formado por paredes invisibles que los pequeños no pueden atravesar. Por ello, para moverse deberán tener una buena memoria que les permita recordar cuáles son los caminos por los que se puede pasar. Cada jugador intenta vencer al laberinto con su peón y ser el primero en conseguir cinco símbolos mágicos.
 
@@ -56,18 +35,24 @@
                 <p><strong>Descuento:</strong> Sí</p>
             </div>
         </div>
-        <div class="juego">
-            <img src="imagenes/niños/DOBBLE.jpg" alt="Juego de niños">
-            <div>
+        <br></br>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="imagenes/niños/DOBBLE.jpg" alt="Juego de niños" class="img-fluid">
+            </div>
+            <div class="col-md-8">
                 <h2>Dobble</h2>
                 <p>Dobble un juego con más de 50 símbolos, 55 cartas, con uno, y solamente un símbolo idéntico entre cada carta. ¿Serás capaz de descubrirlo? Si nunca has jugado a Dobble, coge dos cartas al azar y ponlas boca arriba sobre la mesa a la vista de todos los jugadores. Busca el símbolo idéntico en las dos cartas (misma forma y mismo color, sólo el tamaño puede variar). El primer jugador que encuentre este símbolo, lo nombra y roba dos nuevas cartas que pondrá sobre la mesa. Repite esta operación hasta que todos los jugadores hayan entendido que siempre hay solamente un símbolo idéntico entre dos cartas ¡Y ya está! sencillo, ¿verdad? Pues ahora prepárate, porque Dobble contiene varios mini-juegos, cada cual más divertido e hilarante, aunque el objetivo siempre es el mismo: ser el más rápido, ya que todos los jugadores juegan a la vez.</p>
                 <p><strong>Precio:</strong> $13.990</p>
                 <p><strong>Descuento:</strong> Sí</p>
             </div>
         </div>
-        <div class="juego">
-            <img src="imagenes/niños/MASCARADE.jpg" alt="Juego de niños">
-            <div>
+        <br></br>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="imagenes/niños/MASCARADE.jpg" alt="Juego de niños" class="img-fluid">
+            </div>
+            <div class="col-md-8">
                 <h2>Mascarade</h2>
                 <p>Mascarade es un juego de engaño de 2 a 13 jugadores, diseñado por el genial Bruno Faidutti.
 
@@ -79,8 +64,11 @@
             </div>
         </div>
     </main>
-    <footer>
+    <footer class="bg-dark text-white text-center py-3">
         <p>&copy; 2024 Tienda de Juegos de Mesa. Todos los derechos reservados.</p>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
