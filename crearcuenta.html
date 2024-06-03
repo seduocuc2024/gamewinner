@@ -28,16 +28,16 @@
     </nav>
     <main class="container my-5">
         <h2>Registro de Usuario</h2>
-        <form id="registroForm" onsubmit="return validarFormulario()" novalidate>
+        <form id="registroForm" novalidate>
             <div class="form-group">
                 <label for="nombreCompleto">Nombre Completo</label>
                 <input type="text" class="form-control" id="nombreCompleto" required>
-                <div class="invalid-feedback">Este campo es obligatorio.</div>
+                <div class="invalid-feedback">El nombre completo puede tener un máximo de 25 letras y sin caracteres especiales.</div>
             </div>
             <div class="form-group">
                 <label for="nombreUsuario">Nombre de Usuario</label>
                 <input type="text" class="form-control" id="nombreUsuario" required>
-                <div class="invalid-feedback">Este campo es obligatorio.</div>
+                <div class="invalid-feedback">El nombre de usuario debe tener entre 4 y 16 caracteres y no puede tener caracteres especiales.</div>
             </div>
             <div class="form-group">
                 <label for="email">Correo Electrónico</label>
@@ -45,9 +45,14 @@
                 <div class="invalid-feedback">Debe ser un correo electrónico válido.</div>
             </div>
             <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input type="text" class="form-control" id="telefono" required>
+                <div class="invalid-feedback">El teléfono solo puede contener números y debe tener un máximo de 9 dígitos.</div>
+            </div>
+            <div class="form-group">
                 <label for="password">Contraseña</label>
                 <input type="password" class="form-control" id="password" required>
-                <div class="invalid-feedback">Este campo es obligatorio.</div>
+                <div class="invalid-feedback">La contraseña debe tener entre 4 y 12 dígitos.</div>
             </div>
             <div class="form-group">
                 <label for="repeatPassword">Repetir Contraseña</label>
@@ -74,5 +79,12 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const fechaNacimiento = document.getElementById('fechaNacimiento');
+            const today = new Date().toISOString().split('T')[0];
+            fechaNacimiento.setAttribute('max', today);
+        });
+    </script>
 </body>
 </html>

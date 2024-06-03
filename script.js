@@ -1,151 +1,65 @@
-// script.js
-
-const users = [];
-let cart = [];
-
-// Función para validar y registrar usuario
-function validarFormulario() {
+document.addEventListener('DOMContentLoaded', (event) => {
     const form = document.getElementById('registroForm');
+    form.addEventListener('submit', (event) => {
+        if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+    });
+
     const nombreCompleto = document.getElementById('nombreCompleto');
     const nombreUsuario = document.getElementById('nombreUsuario');
     const email = document.getElementById('email');
+    const telefono = document.getElementById('telefono');
     const password = document.getElementById('password');
     const repeatPassword = document.getElementById('repeatPassword');
     const fechaNacimiento = document.getElementById('fechaNacimiento');
-    let valido = true;
 
-    // Validar nombre completo
-    if (!nombreCompleto.value.trim()) {
-        nombreCompleto.classList.add('is-invalid');
-        valido = false;
-    } else {
-        nombreCompleto.classList.remove('is-invalid');
-    }
+    // Set max date for fechaNacimiento to today's date
+    const today = new Date().toISOString().split('T')[0];
+    fechaNacimiento.setAttribute('max', today);
 
-    // Validar nombre de usuario
-    if (!nombreUsuario.value.trim()) {
-        nombreUsuario.classList.add('is-invalid');
-        valido = false;
-    } else {
-        nombreUsuario.classList.remove('is-invalid');
-    }
-
-    // Validar email
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email.value.trim())) {
-        email.classList.add('is-invalid');
-        valido = false;
-    } else {
-        email.classList.remove('is-invalid');
-    }
-
-    // Validar contraseña
-    if (!password.value.trim()) {
-        password.classList.add('is-invalid');
-        valido = false;
-    } else {
-        password.classList.remove('is-invalid');
-    }
-
-    if (password.value !== repeatPassword.value) {
-        repeatPassword.classList.add('is-invalid');
-        valido = false;
-    } else {
-        repeatPassword.classList.remove('is-invalid');
-    }
-
-    // Validar fecha de nacimiento
-    if (!fechaNacimiento.value.trim()) {
-        fechaNacimiento.classList.add('is-invalid');
-        valido = false;
-    } else {
-        fechaNacimiento.classList.remove('is-invalid');
-    }
-
-    if (valido) {
-        const newUser = {
-            nombreCompleto: nombreCompleto.value.trim(),
-            nombreUsuario: nombreUsuario.value.trim(),
-            email: email.value.trim(),
-            password: password.value.trim(),
-            fechaNacimiento: fechaNacimiento.value.trim(),
-            direccion: document.getElementById('direccion').value.trim()
-        };
-        users.push(newUser);
-        alert('Registro exitoso');
-        form.reset();
-    }
-    return false;
-}
-
-// Función de login de usuario
-function loginUser() {
-    const username = document.getElementById('username').value.trim();
-    const password = document.getElementById('passwordLogin').value.trim();
-
-    const user = users.find(user => user.nombreUsuario === username && user.password === password);
-
-    if (user) {
-        alert(`Bienvenido, ${user.nombreCompleto}`);
-        document.getElementById('loginSection').style.display = 'none';
-        document.getElementById('cartSection').style.display = 'block';
-        document.getElementById('loginLink').style.display = 'none';
-        document.getElementById('cartLink').style.display = 'block';
-    } else {
-        alert('Usuario o contraseña incorrectos');
-    }
-
-    return false;
-}
-
-// Función para agregar producto al carrito
-function addToCart(productName, productPrice) {
-    const product = {
-        name: productName,
-        price: productPrice
-    };
-    cart.push(product);
-    updateCartDisplay();
-}
-
-// Función para actualizar la visualización del carrito
-function updateCartDisplay() {
-    const cartItems = document.getElementById('cartItems');
-    cartItems.innerHTML = '';
-    let total = 0;
-
-    cart.forEach((product, index) => {
-        const listItem = document.createElement('li');
-        listItem.className = 'list-group-item d-flex justify-content-between align-items-center';
-        listItem.textContent = `${product.name} - $${product.price}`;
-        const removeButton = document.createElement('button');
-        removeButton.className = 'btn btn-danger btn-sm';
-        removeButton.textContent = 'Eliminar';
-        removeButton.onclick = () => {
-            cart.splice(index, 1);
-            updateCartDisplay();
-        };
-        listItem.appendChild(removeButton);
-        cartItems.appendChild(listItem);
-        total += product.price;
+    nombreCompleto.addEventListener('input', function() {
+        validateField(this, /^[a-zA-Z\s]{1,25}$/);
     });
 
-    document.getElementById('totalPrice').textContent = `Total: $${total}`;
-}
+    nombreUsuario.addEventListener('input', function() {
+        validateField(this, /^[a-zA-Z0-9]{4,16}$/);
+    });
 
-// Función para finalizar la compra
-function checkout() {
-    if (cart.length === 0) {
-        alert('El carrito está vacío');
-    } else {
-        alert('Compra finalizada');
-        cart = [];
-        updateCartDisplay();
+    email.addEventListener('input', function() {
+        validateField(this, /^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+    });
+
+    telefono.addEventListener('input', function() {
+        validateField(this, /^[0-9]{1,9}$/);
+    });
+
+    password.addEventListener('input', function() {
+        validateField(this, /^[a-zA-Z0-9]{4,12}$/);
+        validatePasswordMatch();
+    });
+
+    repeatPassword.addEventListener('input', validatePasswordMatch);
+
+    function validateField(field, regex) {
+        if (!regex.test(field.value.trim())) {
+            field.classList.add('is-invalid');
+            field.classList.remove('is-valid');
+        } else {
+            field.classList.remove('is-invalid');
+            field.classList.add('is-valid');
+        }
     }
-}
 
-// Mostrar la sección de login al hacer clic en el enlace
-document.getElementById('loginButton').addEventListener('click', () => {
-    document.getElementById('inicioSection').style.display = 'none';
-    document.getElementById('loginSection').style.display = 'block';
+    function validatePasswordMatch() {
+        if (password.value !== repeatPassword.value) {
+            repeatPassword.classList.add('is-invalid');
+            repeatPassword.classList.remove('is-valid');
+        } else {
+            repeatPassword.classList.remove('is-invalid');
+            repeatPassword.classList.add('is-valid');
+        }
+    }
 });
