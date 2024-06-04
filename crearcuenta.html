@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -79,11 +80,79 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
+
+
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
             const fechaNacimiento = document.getElementById('fechaNacimiento');
             const today = new Date().toISOString().split('T')[0];
             fechaNacimiento.setAttribute('max', today);
+
+            const form = document.getElementById('registroForm');
+            form.addEventListener('submit', (event) => {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                } else {
+                    event.preventDefault(); // Evitar el envío del formulario
+
+                    // Crear nuevo usuario y almacenarlo en localStorage
+                    const newUser = {
+                        nombreCompleto: document.getElementById('nombreCompleto').value,
+                        nombreUsuario: document.getElementById('nombreUsuario').value,
+                        email: document.getElementById('email').value,
+                        telefono: document.getElementById('telefono').value,
+                        password: document.getElementById('password').value,
+                        fechaNacimiento: document.getElementById('fechaNacimiento').value,
+                        direccion: document.getElementById('direccion').value
+                    };
+
+                    let users = JSON.parse(localStorage.getItem('users')) || [];
+                    users.push(newUser);
+                    localStorage.setItem('users', JSON.stringify(users));
+
+                    alert("Registro exitoso!");
+                    window.location.href = "iniciosesion.html"; // Redirigir a la página de inicio de sesión
+                }
+                form.classList.add('was-validated');
+            });
+
+            const nombreCompleto = document.getElementById('nombreCompleto');
+            const nombreUsuario = document.getElementById('nombreUsuario');
+            const email = document.getElementById('email');
+            const telefono = document.getElementById('telefono');
+            const password = document.getElementById('password');
+            const repeatPassword = document.getElementById('repeatPassword');
+
+            nombreCompleto.addEventListener('input', () => validateField(nombreCompleto, /^[a-zA-Z\s]{1,25}$/));
+            nombreUsuario.addEventListener('input', () => validateField(nombreUsuario, /^[a-zA-Z0-9]{4,16}$/));
+            email.addEventListener('input', () => validateField(email, /^[^\s@]+\@[^\s@]+\.[^\s@]+$/));
+            telefono.addEventListener('input', () => validateField(telefono, /^[0-9]{1,9}$/));
+            password.addEventListener('input', () => {
+                validateField(password, /^[a-zA-Z0-9]{4,12}$/);
+                validatePasswordMatch();
+            });
+            repeatPassword.addEventListener('input', validatePasswordMatch);
+
+            function validateField(field, regex) {
+                if (!regex.test(field.value.trim())) {
+                    field.classList.add('is-invalid');
+                    field.classList.remove('is-valid');
+                } else {
+                    field.classList.remove('is-invalid');
+                    field.classList.add('is-valid');
+                }
+            }
+
+            function validatePasswordMatch() {
+                if (password.value !== repeatPassword.value) {
+                    repeatPassword.classList.add('is-invalid');
+                    repeatPassword.classList.remove('is-valid');
+                } else {
+                    repeatPassword.classList.remove('is-invalid');
+                    repeatPassword.classList.add('is-valid');
+                }
+            }
         });
     </script>
 </body>

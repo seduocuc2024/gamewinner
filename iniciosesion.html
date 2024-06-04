@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro y Carrito de Compras - Juegos de Mesa</title>
+    <title>Inicio de Sesión - Juegos de Mesa</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header class="bg-primary text-white text-center py-4">
-        <h1>Registro y Carrito de Compras - Juegos de Mesa</h1>
+        <h1>Inicio de Sesión - Juegos de Mesa</h1>
         <div id="sessionStatus" class="text-right pr-3"></div>
     </header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -25,40 +25,27 @@
                 <li class="nav-item"><a class="nav-link" href="niños.html">Niños</a></li>
                 <li class="nav-item"><a class="nav-link" href="2jugadores.html">2 Jugadores</a></li>
                 <li class="nav-item"><a class="nav-link" href="#" id="cartLink" style="display:none;">Carrito</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" onclick="logoutUser()" id="logoutLink" style="display:none;">Cerrar Sesión</a></li>
             </ul>
-        </div>
-        <div id="userDropdown" class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="userDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Login
-            </button>
-            <div class="dropdown-menu" aria-labelledby="userDropdownButton">
-                <a class="dropdown-item" href="#" id="changePasswordLink">Cambiar contraseña</a>
-                <a class="dropdown-item" href="#" onclick="logoutUser()" id="logoutLink">Cerrar sesión</a>
-            </div>
         </div>
     </nav>
     <main class="container my-5">
-        <div id="inicioSection" class="text-center" style="display:block;">
-            <h2>Bienvenido a la Tienda de Juegos de Mesa</h2>
-            <p>Si no tienes una cuenta, puedes crear una aquí.</p>
-            <a href="crearcuenta.html" class="btn btn-primary btn-lg my-3">Crear Cuenta</a>
-            <h3>¿Ya tienes una cuenta?</h3>
-            <a href="iniciosesion.html" class="btn btn-secondary btn-lg my-3">Iniciar Sesión</a>
-        </div>
-
-        <div id="cartSection" style="display:none;">
-            <h2>Carrito de Compras</h2>
-            <div id="products">
-                <div class="card mb-3">
-                    <img src="img/catan.jpg" class="card-img-top" alt="Catán">
-                    <div class="card-body">
-                        <h5 class="card-title">Catán</h5>
-                        <p class="card-text">Catán es un juego de mesa multijugador donde los jugadores intentan colonizar una isla, construir y negociar.</p>
-                        <button class="btn btn-danger" onclick="removeFromCart(this)">Eliminar</button>
-                    </div>
-                </div>
+        <h2>Login de Usuario</h2>
+        <form id="loginForm" onsubmit="return loginUser(event)">
+            <div class="form-group">
+                <label for="username">Nombre de Usuario</label>
+                <input type="text" class="form-control" id="username" required>
             </div>
-        </div>
+            <div class="form-group">
+                <label for="passwordLogin">Contraseña</label>
+                <input type="password" class="form-control" id="passwordLogin" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+            <div id="loginError" class="text-danger mt-3" style="display:none;">Nombre de usuario o contraseña incorrectos.</div>           
+        </form>
+        <script>
+                    window.location.href = "iniciosesion.html";
+        </script>
     </main>
     <footer class="bg-dark text-white text-center py-3">
         <p>&copy; 2024 Tienda de Juegos de Mesa. Todos los derechos reservados.</p>
@@ -67,7 +54,5 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
-    
-    
 </body>
 </html>

@@ -8,79 +8,148 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    
     <header class="bg-primary text-white text-center py-4">
         <h1>Categoria "Aventura"</h1>
     </header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Juegos de Mesa</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Juegos de Mesa</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" id="viewCartLink">Ver Carrito</a></li>
+        </ul>
+    </div>
+    <div id="userDropdown" class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="userDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Usuario
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-            </ul>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdownButton">
+            <a class="dropdown-item" href="#" id="changePasswordLink">Cambiar contraseña</a>
+            <a class="dropdown-item" href="#" id="logoutLink">Cerrar sesión</a>
         </div>
-    </nav>
-    <main class="container my-5">
-        <div class="row">
-            <div class="col-md-4">
-                <img src="imagenes/aventura/ELDRITCH_HORROR.jpg" alt="Juego de aventura" class="img-fluid">
-            </div>
-            <div class="col-md-8">
-                <h2>Eldritch Horror</h2>
-                <p>¡Se acerca el fin del mundo!
+    </div>
+</nav>
+<main class="container my-5">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="imagenes/aventura/ELDRITCH_HORROR.jpg" alt="Juego de aventura" class="img-fluid">
+        </div>
+        <div class="col-md-8">
+            <h2>Eldritch Horror</h2>
+            <p>¡Se acerca el fin del mundo!
 
-                    El mundo está al borde de la catástrofe. Estamos en 1926 y un ser de increíble poder amenaza con despertar de su largo letargo trayendo muerte y destrucción. Extrañas sectas y terribles monstruos siembran el caos en todos los continentes mientras el tejido de la realidad se desgarra, abriendo portales a extraños mundos. Sólo unos pocos valerosos investigadores entienden lo que está ocurriendo realmente. Estas tenaces almas de todo tipo y condición emplean sus habilidades y armas para enfrentarse a la amenaza del Primigenio. ¡Su tarea es explorar los rincones más remotos del planeta para combatir a las criaturas de pesadilla que acechan en las sombras y encontrar las respuestas a los antiguos misterios de Eldritch Horror!
-                    
-                    Eldritch Horror es un juego de aventuras cooperativo para 1–8 jugadores inspirado en el exitoso juego de tablero Arkham Horror.</p>
-                <p><strong>Precio:</strong> $59.990</p>
-                <p><strong>Descuento:</strong> Sí</p>
-            </div>
+                El mundo está al borde de la catástrofe. Estamos en 1926 y un ser de increíble poder amenaza con despertar de su largo letargo trayendo muerte y destrucción. Extrañas sectas y terribles monstruos siembran el caos en todos los continentes mientras el tejido de la realidad se desgarra, abriendo portales a extraños mundos. Sólo unos pocos valerosos investigadores entienden lo que está ocurriendo realmente. Estas tenaces almas de todo tipo y condición emplean sus habilidades y armas para enfrentarse a la amenaza del Primigenio. ¡Su tarea es explorar los rincones más remotos del planeta para combatir a las criaturas de pesadilla que acechan en las sombras y encontrar las respuestas a los antiguos misterios de Eldritch Horror!
+                
+                Eldritch Horror es un juego de aventuras cooperativo para 1–8 jugadores inspirado en el exitoso juego de tablero Arkham Horror.</p>
+            <p><strong>Precio:</strong> $59.990</p>
+            <p><strong>Descuento:</strong> Sí</p>
+            <button class="btn btn-primary add-to-cart" style="display:none;">Agregar al Carrito</button>
         </div>
-        <br></br>
-        <div class="row">
-            <div class="col-md-4">
-                <img src="imagenes/aventura/THE_ISLAND.jpg" alt="Juego de aventura" class="img-fluid">
-            </div>
-            <div class="col-md-8">
-                <h2>The Island</h2>
-                <p>Diriges un equipo de valientes Exploradores, en una expedición a una exótica isla llena de peligros y tesoros. De repente, el volcán que corona este exuberante arrecife, hasta ahora dormido, ¡ha entrado en erupción! La tierra comienza a temblar y la isla se hunde, lenta e inexorablemente, en el mar. Debes salvar a tu equipo si quieres ganar la partida.
+    </div>
+    <br></br>
+    <div class="row">
+        <div class="col-md-4">
+            <img src="imagenes/aventura/THE_ISLAND.jpg" alt="Juego de aventura" class="img-fluid">
+        </div>
+        <div class="col-md-8">
+            <h2>The Island</h2>
+            <p>Diriges un equipo de valientes Exploradores, en una expedición a una exótica isla llena de peligros y tesoros. De repente, el volcán que corona este exuberante arrecife, hasta ahora dormido, ¡ha entrado en erupción! La tierra comienza a temblar y la isla se hunde, lenta e inexorablemente, en el mar. Debes salvar a tu equipo si quieres ganar la partida.
 
-                    El objetivo del juego es conseguir que tus Exploradores lleguen a tierra firme, con la mayor cantidad de tesoros posible. Al final de la partida, se sumarán los puntos, que están impresos en la base, de los Exploradores que estén a salvo, y el jugador con más puntos será el ganador.
-                    
-                    The Island, suspenso, acción, aventuras... ¡y muchas risas aseguradas!</p>
-                <p><strong>Precio:</strong> $31.990</p>
-                <p><strong>Descuento:</strong> Sí</p>
-            </div>
+                El objetivo del juego es conseguir que tus Exploradores lleguen a tierra firme, con la mayor cantidad de tesoros posible. Al final de la partida, se sumarán los puntos, que están impresos en la base, de los Exploradores que estén a salvo, y el jugador con más puntos será el ganador.
+                
+                The Island, suspenso, acción, aventuras... ¡y muchas risas aseguradas!</p>
+            <p><strong>Precio:</strong> $31.990</p>
+            <p><strong>Descuento:</strong> Sí</p>
+            <button class="btn btn-primary add-to-cart" style="display:none;">Agregar al Carrito</button>
         </div>
-        <br></br>
-        <div class="row">
-            <div class="col-md-4">
-                <img src="imagenes/aventura/GLOOMHAVEN.jpg" alt="Juego de aventura" class="img-fluid">
-            </div>
-            <div class="col-md-8">
-                <h2>Gloomhaven: Fauces del León</h2>
-                <p>El arrollador éxito que la saga Gloomhaven ha tenido desde sus inicios es uno de los motivos por los que se ha convertido por derecho propio en un clásico moderno. Es el más completo juego de mazmorreo, con un grupo de intrépidos aventureros enfrentándose a todo tipo de escenarios de fantasía, plagados de tesoros, enemigos de todo tipo y acertijos que resolver.
-                    Y ahora, entrar en este universo va a ser más fácil que nunca. Si quieres disfrutar de toda su calidad de la manera más rápida y accesible, estás de enhorabuena. Anunciamos un juego a tu medida: Gloomhaven: Fauces del León, una versión más sencilla de jugar que sin duda va a conseguir hacer miles de nuevos fans.
-                    En Gloomhaven: Fauces del León vamos encontrar todo lo que hace grande a Gloomhaven, pero inteligentísimamente simplificado para que aprender sus mecánicas básicas y dejarnos llevar por su apasionante historia ambientada antes del los eventos del Gloomhaven básico en un mundo de fantasía que además derrocha personalidad propia.
-                    El juego incluye cuatro personajes nuevos con diversas especialidades, dieciséis tipos de monstruos entre los que los fanáticos de Gloomhaven podrán encontrar hasta siete nuevos tipos de adversarios y tres nuevos jefes y una campaña de veinticinco escenarios que nos llevarán a investigar una serie de misteriosas desapariciones en la ciudad.
-                    La gran novedad de Gloomhaven: Fauces del León es la sustitución de los mapas de cartón de los anteriores juegos por un libro de escenarios jugable que incluye los mapas de cada una de las misiones que se nos irán encomendando y que no sólo aligera el peso de la caja, sino que también simplifica enormemente la puesta en mesa del juego. Además, los cinco escenarios iniciales son también un sencillísimo tutorial que nos va a permitir aprender las mecánicas del juego.
-                    Gloomhaven: Fauces del León no sólo es un efectivo reclamo para aquellos que se hayan podido sentir intimidados por el Gloomhaven original, también es un refinado de conceptos y todo un despliegue de nuevas ideas que a buen seguro acabarán integradas en futuros títulos de la familia. Queda mucho Gloomhaven por explorar… Y no podemos más que dar saltos de alegría por ello.</p>
-                <p><strong>Precio:</strong> $69.990</p>
-                <p><strong>Descuento:</strong> Sí</p>
-            </div>
+    </div>
+    <br></br>
+    <div class="row">
+        <div class="col-md-4">
+            <img src="imagenes/aventura/GLOOMHAVEN.jpg" alt="Juego de aventura" class="img-fluid">
         </div>
-    </main>
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2024 Tienda de Juegos de Mesa. Todos los derechos reservados.</p>
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <div class="col-md-8">
+            <h2>Gloomhaven: Fauces del León</h2>
+            <p>El arrollador éxito que la saga Gloomhaven ha tenido desde sus inicios es uno de los motivos por los que se ha convertido por derecho propio en un clásico moderno. Es el más completo juego de mazmorreo, con un grupo de intrépidos aventureros enfrentándose a todo tipo de escenarios de fantasía, plagados de tesoros, enemigos de todo tipo y acertijos que resolver.
+                Y ahora, entrar en este universo va a ser más fácil que nunca. Si quieres disfrutar de toda su calidad de la manera más rápida y accesible, estás de enhorabuena. Anunciamos un juego a tu medida: Gloomhaven: Fauces del León, una versión más sencilla de jugar que sin duda va a conseguir hacer miles de nuevos fans.
+                En Gloomhaven: Fauces del León vamos encontrar todo lo que hace grande a Gloomhaven, pero inteligentísimamente simplificado para que aprender sus mecánicas básicas y dejarnos llevar por su apasionante historia ambientada antes del los eventos del Gloomhaven básico en un mundo de fantasía que además derrocha personalidad propia.
+                El juego incluye cuatro personajes nuevos con diversas especialidades, dieciséis tipos de monstruos entre los que los fanáticos de Gloomhaven podrán encontrar hasta siete nuevos tipos de adversarios y tres nuevos jefes y una campaña de veinticinco escenarios que nos llevarán a investigar una serie de misteriosas desapariciones en la ciudad.
+                La gran novedad de Gloomhaven: Fauces del León es la sustitución de los mapas de cartón de los anteriores juegos por un libro de escenarios jugable que incluye los mapas de cada una de las misiones que se nos irán encomendando y que no sólo aligera el peso de la caja, sino que también simplifica enormemente la puesta en mesa del juego. Además, los cinco escenarios iniciales son también un sencillísimo tutorial que nos va a permitir aprender las mecánicas del juego.
+                Gloomhaven: Fauces del León no sólo es un efectivo reclamo para aquellos que se hayan podido sentir intimidados por el Gloomhaven original, también es un refinado de conceptos y todo un despliegue de nuevas ideas que a buen seguro acabarán integradas en futuros títulos de la familia. Queda mucho Gloomhaven por explorar… Y no podemos más que dar saltos de alegría por ello.</p>
+            <p><strong>Precio:</strong> $69.990</p>
+            <p><strong>Descuento:</strong> Sí</p>
+            <button class="btn btn-primary add-to-cart" style="display:none;">Agregar al Carrito</button>
+        </div>
+    </div>
+    <!-- Otros juegos... -->
+    <!-- Carrito de Compras -->
+    <div id="cart" style="display:none;">
+        <h2>Carrito de Compras</h2>
+        <ul id="cartItems"></ul>
+    </div>
+</main>
+<footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2024 Tienda de Juegos de Mesa. Todos los derechos reservados.</p>
+</footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const loggedIn = localStorage.getItem('loggedIn') === 'true';
+        const username = localStorage.getItem('username');
+
+        if (loggedIn) {
+            document.getElementById('userDropdownButton').textContent = username;
+
+            // Mostrar botones de agregar al carrito
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.style.display = 'block';
+                button.addEventListener('click', addToCart);
+            });
+
+            // Mostrar link para ver carrito
+            document.getElementById('viewCartLink').style.display = 'block';
+            document.getElementById('viewCartLink').addEventListener('click', showCart);
+        }
+
+        document.getElementById('logoutLink').addEventListener('click', () => {
+            localStorage.removeItem('loggedIn');
+            localStorage.removeItem('username');
+            localStorage.removeItem('cart');
+            window.location.href = 'login.html';
+        });
+
+        function addToCart(event) {
+            const item = event.target.closest('.row');
+            const title = item.querySelector('h2').textContent;
+            const price = item.querySelector('p strong').textContent.replace('Precio:', '').trim();
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            cart.push({ title, price });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert('Producto agregado al carrito');
+        }
+
+        function showCart(event) {
+            event.preventDefault();
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItems = document.getElementById('cartItems');
+            cartItems.innerHTML = '';
+
+            cart.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${item.title} - ${item.price}`;
+                cartItems.appendChild(listItem);
+            });
+
+            document.getElementById('cart').style.display = 'block';
+        }
+    });
+</script>
 </body>
 </html>
-
-
-
-
